@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>RealBetter - Close Deals Faster</title>
+
+<style>
+:root{
+--red:#e11d48;
+--dark:#0f172a;
+--gray:#f8fafc;
+--muted:#64748b;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+background:#fff;color:var(--dark);line-height:1.6;
+}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+.container{max-width:1180px;margin:auto;padding:0 20px}
+.section{padding:90px 0}
+.center{text-align:center}
+
+h1{font-size:clamp(32px,5vw,58px);line-height:1.1}
+h2{font-size:clamp(26px,3vw,38px)}
+p{color:var(--muted)}
+
+.btn{
+display:inline-flex;align-items:center;gap:10px;
+padding:14px 30px;border-radius:999px;
+background:var(--red);color:#fff;font-weight:700;
+transition:.25s;
+}
+.btn:hover{transform:translateY(-2px);background:#be123c}
+
+
+/* ===== HEADER ===== */
+
+.rb-header{
+  position:fixed;
+  top:16px;
+  left:0;
+  right:0;
+  z-index:100;
+  transition:all .4s ease;
+}
+
+.rb-header-inner{
+  max-width:1180px;
+  margin:auto;
+  padding:12px 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-radius:999px;
+  transition:all .4s ease;
+}
+
+.rb-logo img{
+  height:52px;
+  transition:.4s;
+}
+
+/* NAV */
+
+.rb-nav{
+  display:flex;
+  gap:28px;
+  font-size:14px;
+  font-weight:600;
+}
+
+.rb-nav a{
+  color:rgba(255,255,255,.9);
+  transition:.25s;
+}
+
+.rb-nav a:hover{color:#fff}
+
+/* CTA */
+
+.rb-cta{
+  background:rgba(225,29,72,.9);
+  color:#fff;
+  padding:10px 22px;
+  border-radius:999px;
+  font-weight:700;
+  box-shadow:0 6px 18px rgba(0,0,0,.25);
+  transition:.25s;
+}
+
+.rb-cta:hover{background:#be123c}
+
+/* ===== SCROLLED STATE ===== */
+
+.rb-header.scrolled .rb-header-inner{
+  background:#fff;
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
+  padding:6px 18px;
+}
+
+.rb-header.scrolled .rb-logo img{
+  height:42px;
+}
+
+.rb-header.scrolled .rb-nav a{
+  color:#374151;
+}
+
+.rb-header.scrolled .rb-nav a:hover{
+  color:#e11d48;
+}
+
+.rb-header.scrolled .rb-cta{
+  background:#e11d48;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:900px){
+  .rb-nav{display:none}
+}
+
+/* ===== HERO ===== */
+.hero{
+min-height:95vh;display:flex;align-items:center;
+background:
+linear-gradient(to bottom,rgba(15,23,42,.7),rgba(15,23,42,.9)),
+url('images/hero-image.png') center/cover no-repeat;
+color:#fff;
+}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.hero p{color:#e5e7eb}
+.badge{
+display:inline-block;background:rgba(255,255,255,.15);
+padding:6px 14px;border-radius:999px;font-size:12px;margin-bottom:14px
+}
+.stats{display:flex;gap:30px;margin:24px 0}
+.stat strong{font-size:22px;display:block}
+
+@media(max-width:600px){
+
+  h1{font-size:34px}
+  h2{font-size:26px}
+
+  .section{padding:60px 0}
+
+  .hero{min-height:auto;padding:80px 0}
+
+  .stats{flex-direction:row;gap:10px}
+
+  .btn{
+    width:100%;
+    justify-content:center;
+    font-size:16px;
+    padding:16px 24px;
+  }
+
+}
+/* ===== PAIN → IMAGE → SOLUTION (VISUAL) ===== */
+
+.triple-compare{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+/* IMAGE CENTER */
+.compare-image{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  text-align:center;
+}
+
+.compare-image img{
+  width:240px;
+  border-radius:28px;
+  box-shadow:0 30px 60px rgba(0,0,0,.25);
+}
+
+/* FLOATING TAGS */
+.image-float{
+  position:absolute;
+  background:#fff;
+  padding:6px 14px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:800;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+  white-space:nowrap;
+}
+
+.image-float.left{ top:25%; left:-20px; }
+.image-float.right{ top:25%; right:-20px; }
+.image-float.top{
+  top:-10px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+/* IMAGE TAG */
+.image-tag{
+  position:absolute;
+  bottom:-14px;
+  left:50%;
+  transform:translateX(-50%);
+  background:var(--red);
+  color:#fff;
+  padding:6px 16px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:700;
+}
+
+/* COMPARE BOXES */
+.compare-box{
+  background:#fff;
+  border-radius:24px;
+  padding:28px;
+  box-shadow:0 18px 45px rgba(0,0,0,.08);
+}
+
+.compare-box h3{
+  margin-bottom:18px;
+  font-size:18px;
+}
+
+.compare-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:10px 0;
+  font-size:15px;
+  color:#334155;
+}
+
+.compare-box.bad{ border-left:5px solid #cbd5e1; }
+.compare-box.good{ border-left:5px solid var(--red); }
+
+/* ICONS */
+.x-icon{
+  width:22px;height:22px;
+  display:grid;place-items:center;
+  border-radius:50%;
+  background:#e5e7eb;
+  color:#64748b;
+  font-weight:800;
+  font-size:14px;
+  flex-shrink:0;
+}
+
+.check-icon{
+  width:22px;height:22px;
+  display:grid;place-items:center;
+  border-radius:50%;
+  background:#ffe4e6;
+  color:var(--red);
+  flex-shrink:0;
+}
+
+.check-icon svg{
+  width:14px;
+  height:14px;
+  stroke-width:3;
+}
+
+/* ===== TABLET & MOBILE ===== */
+
+@media(max-width:900px){
+
+  .triple-compare{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .compare-image{
+    margin:10px 0 20px;
+  }
+
+  .compare-image img{
+    width:200px;
+  }
+
+  .image-float.left{ left:10px; }
+  .image-float.right{ right:10px; }
+}
+
+/* ===== SMALL MOBILE ===== */
+
+@media(max-width:600px){
+
+  .compare-image img{
+    width:180px;
+  }
+
+  .compare-box{
+    padding:22px;
+  }
+
+  .image-float{
+    font-size:11px;
+    padding:5px 10px;
+  }
+}
+
+
+/* ===== DEAL VS PRICE ===== */
+
+.deal-grid{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  gap:40px;
+  max-width:900px;
+  margin:auto;
+}
+
+.deal-card{
+  background:#f8fafc;
+  border-radius:26px;
+  padding:36px 28px;
+  text-align:center;
+  box-shadow:0 18px 45px rgba(0,0,0,.08);
+}
+
+.deal-card.big{
+  border:2px solid #16a34a;
+}
+
+.deal-card.small{
+  border:2px solid var(--red);
+}
+
+.deal-icon{
+  font-size:38px;
+  margin-bottom:12px;
+}
+
+.deal-amount{
+  font-size:34px;
+  font-weight:900;
+  color:#16a34a;
+  margin:10px 0;
+}
+
+.deal-amount.red{
+  color:var(--red);
+}
+
+.deal-vs{
+  font-size:32px;
+  font-weight:900;
+  opacity:.4;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+  .deal-grid{
+    grid-template-columns:1fr;
+    gap:26px;
+  }
+
+  .deal-vs{
+    display:none;
+  }
+}
+/* ===== REELS CLICK TO PLAY ===== */
+
+.reels-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.reel-card{
+  position:relative;
+  border-radius:22px;
+  overflow:hidden;
+  background:#000;
+  box-shadow:0 18px 45px rgba(0,0,0,.18);
+  cursor:pointer;
+}
+
+.reel-card video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  aspect-ratio:9/16;
+  display:block;
+}
+
+/* PLAY BUTTON */
+.play-overlay{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  font-size:42px;
+  color:#fff;
+  background:rgba(0,0,0,.35);
+  transition:.25s;
+}
+
+.reel-card.playing .play-overlay{
+  opacity:0;
+  pointer-events:none;
+}
+
+/* TAG */
+.reel-tag{
+  position:absolute;
+  bottom:10px;
+  left:50%;
+  transform:translateX(-50%);
+  background:rgba(0,0,0,.65);
+  color:#fff;
+  padding:6px 14px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:700;
+  backdrop-filter:blur(4px);
+}
+
+/* TABLET */
+@media(max-width:900px){
+  .reels-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .reels-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* ===== WHO IT'S FOR / NOT FOR ===== */
+
+.fit-section{
+  background:#fff;
+}
+
+.fit-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:34px;
+  max-width:980px;
+  margin:auto;
+}
+
+.fit-box{
+  background:#f8fafc;
+  border-radius:26px;
+  padding:36px 30px;
+  box-shadow:0 18px 45px rgba(0,0,0,.08);
+}
+
+.fit-box.for{
+  border-left:6px solid #16a34a;
+}
+
+.fit-box.not{
+  border-left:6px solid #64748b;
+  opacity:.85;
+}
+
+.fit-box h3{
+  font-size:20px;
+  margin-bottom:16px;
+}
+
+.fit-item{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  padding:10px 0;
+  font-size:15px;
+  color:#334155;
+}
+
+.fit-icon{
+  width:22px;height:22px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+  font-weight:900;
+  font-size:14px;
+}
+
+.fit-box.for .fit-icon{
+  background:#dcfce7;
+  color:#16a34a;
+}
+
+.fit-box.not .fit-icon{
+  background:#e5e7eb;
+  color:#64748b;
+}
+
+.fit-cta{
+  text-align:center;
+  margin-top:50px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+  .fit-grid{
+    grid-template-columns:1fr;
+  }
+
+  .fit-box{
+    padding:28px 22px;
+  }
+}
+
+
+/* PAID HIGHLIGHT */
+
+.fp-box.paid{
+  border:2px solid var(--red);
+  box-shadow:0 25px 60px rgba(225,29,72,.18);
+  position:relative;
+}
+
+.fp-box.paid li::before{
+  background:var(--red);
+}
+
+.fp-badge{
+  position:absolute;
+  top:-12px;
+  left:24px;
+  background:var(--red);
+  color:#fff;
+  padding:5px 14px;
+  font-size:12px;
+  border-radius:999px;
+  font-weight:600;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+  .free-paid-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* ===== CARDS ===== */
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px}
+
+.card{
+background:#fff;border-radius:22px;padding:26px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+.card.soft{background:var(--gray)}
+.icon{
+width:46px;height:46px;border-radius:14px;
+display:grid;place-items:center;
+background:#ffe4e6;color:var(--red);margin-bottom:14px
+}
+.icon svg{width:22px;height:22px}
+
+@media(max-width:600px){
+
+  .card{
+    padding:22px;
+  }
+
+}
+/* ===== DEMO FORM ===== */
+
+.form-wrap{
+  background:#fff;
+  border-radius:28px;
+  padding:36px;
+  box-shadow:0 25px 60px rgba(0,0,0,.12);
+  max-width:520px;
+  margin:auto;
+}
+
+/* FIELD */
+.field{
+  position:relative;
+  margin-bottom:16px;
+}
+
+/* INPUTS */
+.field input{
+  width:100%;
+  padding:14px 14px 14px 46px;
+  border-radius:12px;
+  border:1px solid #cbd5e1;
+  font-size:15px;
+  background:#fff;
+}
+
+.field input:focus{
+  outline:none;
+  border-color:var(--red);
+}
+
+/* ICON */
+.field-icon{
+  position:absolute;
+  left:14px;
+  top:50%;
+  transform:translateY(-50%);
+  color:#94a3b8;
+  pointer-events:none;
+}
+
+.field-icon svg{
+  width:18px;
+  height:18px;
+  stroke-width:2.2;
+}
+
+/* ===== TIME SLOTS ===== */
+
+.time-slots{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:8px;
+}
+
+.slot{
+  border:1px solid #cbd5e1;
+  background:#fff;
+  padding:12px;
+  border-radius:12px;
+  font-weight:600;
+  font-size:14px;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.slot:hover{
+  border-color:var(--red);
+  color:var(--red);
+}
+
+.slot.active{
+  background:#ffe4e6;
+  border-color:var(--red);
+  color:var(--red);
+}
+/* ===== DEMO CTA BUTTON ===== */
+
+.demo-btn{
+  width:100%;
+  margin-top:16px;
+  padding:16px 22px;
+  border:none;
+  border-radius:14px;
+  background:linear-gradient(135deg,#e11d48,#be123c);
+  color:#fff;
+  font-size:16px;
+  font-weight:800;
+  letter-spacing:.2px;
+  cursor:pointer;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+
+  box-shadow:0 12px 30px rgba(225,29,72,.35);
+  transition:all .25s ease;
+}
+
+.demo-btn svg{
+  width:18px;
+  height:18px;
+  stroke-width:2.5;
+}
+
+.demo-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 18px 40px rgba(225,29,72,.45);
+}
+
+.demo-btn:active{
+  transform:translateY(0);
+  box-shadow:0 8px 20px rgba(225,29,72,.35);
+}
+
+.demo-btn:disabled{
+  opacity:.7;
+  cursor:not-allowed;
+}
+
+
+
+
+/* MOBILE */
+@media(max-width:600px){
+  .form-wrap{padding:26px 20px}
+
+  .field input{
+    font-size:16px;
+    padding:16px 16px 16px 48px;
+  }
+}
+
+/* ===== PRICING ===== */
+.price-box{
+border:2px solid var(--red);
+border-radius:26px;padding:36px;text-align:center;
+box-shadow:0 20px 50px rgba(225,29,72,.2)
+}
+.price{font-size:42px;font-weight:900;color:var(--red)}
+
+/* ===== FINAL CTA ===== */
+.final{
+background:linear-gradient(135deg,#e11d48,#be123c);
+color:#fff;text-align:center
+}
+.final p{color:#ffe4e6}
+
+/* ===== MOBILE ===== */
+@media(max-width:900px){
+.hero-grid{grid-template-columns:1fr;text-align:center}
+.stats{justify-content:center}
+}
+</style>
+</head>
+
+<body>
+<!-- ===== STICKY HEADER ===== -->
+<header id="rb-header" class="rb-header">
+  <div class="rb-header-inner">
+
+    <!-- LOGO -->
+    <a href="#" class="rb-logo">
+      <img id="rb-logo-img" src="images/white.png" alt="RealBetter Logo" />
+    </a>
+
+    <!-- DESKTOP NAV -->
+    <nav class="rb-nav">
+      <a href="#how">How It Works</a>
+      <a href="#features">Features</a>
+      <a href="#watch">Demo</a>
+      <a href="#pricing">Pricing</a>
+    </nav>
+
+    <!-- CTA -->
+    <a href="#demo" class="rb-cta">Book Demo</a>
+
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<span class="badge">Only for RealBetter Agents</span>
+<h1>Har client bole<br>“aur options dikhao”?</h1>
+<p>Verified builder floors, resale & new launches — jo clients ko fast decision lene mein help kare</p>
+
+<div class="stats">
+<div class="stat"><strong>11k+</strong><small>Agents</small></div>
+<div class="stat"><strong>6k+</strong><small>Listings</small></div>
+<div class="stat"><strong>1500+</strong><small>Builders</small></div>
+</div>
+
+<a href="#demo" class="btn">Book Free Demo</a>
+<p style="font-size:13px;margin-top:8px">₹3,000/month • No lock-in • 7-day refund</p>
+</div>
+
+</div>
+</section>
+<!-- PAIN → IMAGE → SOLUTION (SIMPLIFIED + VISUAL) -->
+<section class="section pain-visual" id="how" style="background:var(--gray)">
+  <div class="container">
+
+    <div class="center" style="margin-bottom:50px">
+      <h2>Same Market. Different Results.</h2>
+      <p>Problem clients nahi — system ka problem hai.</p>
+    </div>
+
+    <div class="triple-compare">
+
+      <!-- WITHOUT -->
+      <div class="compare-box bad">
+        <h3>Without RealBetter</h3>
+
+        <div class="compare-item">
+          <span class="x-icon">✕</span> Fake listings
+        </div>
+        <div class="compare-item">
+          <span class="x-icon">✕</span> Forwarded photos
+        </div>
+        <div class="compare-item">
+          <span class="x-icon">✕</span> Client confused
+        </div>
+        <div class="compare-item">
+          <span class="x-icon">✕</span> No control on deal
+        </div>
+      </div>
+
+      <!-- IMAGE CENTER -->
+      <div class="compare-image">
+        <img src="images/agent-phone.png" alt="RealBetter app showing live properties">
+
+        <!-- FLOATING BENEFITS -->
+        <span class="image-float left">Verified</span>
+        <span class="image-float right">Builder Direct</span>
+        <span class="image-float top">Price Visible</span>
+
+        <span class="image-tag">Live Inventory</span>
+      </div>
+
+      <!-- WITH -->
+      <div class="compare-box good">
+        <h3>With RealBetter</h3>
+
+        <div class="compare-item">
+          <span class="check-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </span>
+          Verified stock
+        </div>
+
+        <div class="compare-item">
+          <span class="check-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </span>
+          Builder direct
+        </div>
+
+        <div class="compare-item">
+          <span class="check-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </span>
+          Fast shortlist
+        </div>
+
+        <div class="compare-item">
+          <span class="check-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </span>
+          Faster token
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- DEAL VS PRICE SECTION -->
+<section class="section deal-math" style="background:#fff">
+  <div class="container">
+
+    <div class="center" style="margin-bottom:60px">
+      <h2>Ek Deal vs Monthly Fee</h2>
+      <p>Decision simple hai.</p>
+    </div>
+
+    <div class="deal-grid">
+
+      <!-- DEAL CARD -->
+      <div class="deal-card big">
+        <div class="deal-icon">🏠</div>
+        <h3>1 Builder Floor Deal</h3>
+        <div class="deal-amount">₹1,00,000+</div>
+        <p>Average agent commission</p>
+      </div>
+
+      <!-- VS -->
+      <div class="deal-vs">VS</div>
+
+      <!-- PRICE CARD -->
+      <div class="deal-card small">
+        <div class="deal-icon">📱</div>
+        <h3>RealBetter Monthly</h3>
+        <div class="deal-amount red">₹3,000</div>
+        <p>Unlimited deals access</p>
+      </div>
+
+    </div>
+
+    <div class="center" style="margin-top:40px">
+      <p style="font-weight:700;font-size:18px">
+        Ek deal bhi close hua = poora saal ka fee recover.
+      </p>
+      <br>
+      <a href="#demo" class="btn">Try for 1 Deal →</a>
+    </div>
+
+  </div>
+</section>
+<!-- REAL AGENT REELS (CLICK TO PLAY WITH SOUND) -->
+<section class="section reels-section" style="background:#fff">
+  <div class="container">
+
+    <div class="center" style="margin-bottom:50px">
+      <h2>Real Agents. Real Deals.</h2>
+      <p>Tap karke dekho, real field ka scene.</p>
+    </div>
+
+    <div class="reels-grid">
+
+      <!-- REEL 1 -->
+      <div class="reel-card" onclick="toggleReel(this)">
+        <video src="videos/agent1.mp4" playsinline></video>
+        <div class="play-overlay">▶</div>
+        <span class="reel-tag">Search & Shortlist</span>
+      </div>
+
+      <!-- REEL 2 -->
+      <div class="reel-card" onclick="toggleReel(this)">
+        <video src="videos/agent2.mp4" playsinline></video>
+        <div class="play-overlay">▶</div>
+        <span class="reel-tag">Site Visit</span>
+      </div>
+
+      <!-- REEL 3 -->
+      <div class="reel-card" onclick="toggleReel(this)">
+        <video src="videos/agent3.mp4" playsinline></video>
+        <div class="play-overlay">▶</div>
+        <span class="reel-tag">Builder Connect</span>
+      </div>
+
+      <!-- REEL 4 -->
+      <div class="reel-card" onclick="toggleReel(this)">
+        <video src="videos/agent4.mp4" playsinline></video>
+        <div class="play-overlay">▶</div>
+        <span class="reel-tag">Deal Closed</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- WHO IT'S FOR / NOT FOR — VISUAL FIRST -->
+<section class="section fit-section" id="features">
+  <div class="container">
+
+    <div class="center" style="margin-bottom:60px">
+      <h2>Is RealBetter Built for Your Working Style?</h2>
+      <p>2 types of agents. Only one benefits from this system.</p>
+    </div>
+
+    <div class="fit-grid">
+
+      <!-- FOR -->
+      <div class="fit-box for">
+
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px">
+          <div class="fit-icon" style="width:44px;height:44px;font-size:18px">✓</div>
+          <h3 style="margin:0">Deal-Focused Agents</h3>
+        </div>
+
+        <div class="fit-item">
+          <span class="fit-icon">✓</span>
+          Daily site visits with real buyers
+        </div>
+
+        <div class="fit-item">
+          <span class="fit-icon">✓</span>
+          Builder floor & resale specialists
+        </div>
+
+        <div class="fit-item">
+          <span class="fit-icon">✓</span>
+          Want faster shortlisting, fewer visits
+        </div>
+
+        <div class="fit-item">
+          <span class="fit-icon">✓</span>
+          Care about presentation & trust
+        </div>
+
+        <div class="fit-item">
+          <span class="fit-icon">✓</span>
+          Income depends on closing speed
+        </div>
+
+      </div>
+
+      <!-- NOT FOR -->
+      <div class="fit-box not">
+
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px">
+          <div class="fit-icon" style="width:44px;height:44px;font-size:18px">–</div>
+          <h3 style="margin:0">Casual / Forwarding Agents</h3>
+        </div>
+
+        <div class="fit-item">
+          <span class="fit-icon">–</span>
+          Only share WhatsApp inventory
+        </div>
+
+        <div class="fit-item">
+          <span class="fit-icon">–</span>
+          Rarely meet clients personally
+        </div>
+
+        <div class="fit-item">
+          <span class="fit-icon">–</span>
+          Work with recycled listings
+        </div>
+
+        <div class="fit-item">
+          <span class="fit-icon">–</span>
+          Exploring market, not closing now
+        </div>
+
+        <div class="fit-item">
+          <span class="fit-icon">–</span>
+          Not investing in tools for growth
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="fit-cta">
+      <a href="#demo" class="btn">Try With Your Next Client →</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- VIDEO -->
+<section class="section" id="watch">
+<div class="container center">
+<h2>See How It Works</h2><br>
+<video src="videos/demo.mp4" controls muted autoplay playsinline
+style="width:100%;max-width:900px;border-radius:26px;box-shadow:0 20px 50px rgba(0,0,0,.2)"></video>
+</div>
+</section>
+
+<!-- DEMO FORM -->
+<section class="section" id="demo" style="background:var(--gray)">
+  <div class="container center">
+    <h2>Live Deals Pe Demo Dekho</h2>
+    <p>Live deals pe demo. Pasand aaye tabhi aage badho.</p><br>
+<p style="font-size:14px;margin-bottom:12px">
+  👨‍💼 RealBetter Relationship Manager will call you<br>
+</p>
+
+    <div class="form-wrap">
+      <form id="demoForm">
+
+        <!-- NAME -->
+        <div class="field">
+          <span class="field-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
+            </svg>
+          </span>
+          <input id="name" placeholder="Your Name" required />
+        </div>
+
+        <!-- PHONE -->
+        <div class="field">
+          <span class="field-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M22 16.9v3a2 2 0 0 1-2.2 2
+                       19.8 19.8 0 0 1-8.6-3.1
+                       19.5 19.5 0 0 1-6-6
+                       19.8 19.8 0 0 1-3.1-8.7
+                       A2 2 0 0 1 4.1 2h3
+                       a2 2 0 0 1 2 1.7
+                       12.8 12.8 0 0 0 .7 2.8
+                       2 2 0 0 1-.4 2.1L8.1 9.9
+                       a16 16 0 0 0 6 6l1.3-1.3
+                       a2 2 0 0 1 2.1-.4
+                       12.8 12.8 0 0 0 2.8.7
+                       a2 2 0 0 1 1.7 2z"/>
+            </svg>
+          </span>
+          <input id="mobile" placeholder="Mobile Number" pattern="[0-9]{10}" required />
+        </div>
+
+        <!-- DATE -->
+        <div class="field">
+          <span class="field-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <rect x="3" y="4" width="18" height="18" rx="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </span>
+          <input type="date" id="date" required />
+        </div>
+
+        <!-- TIME SLOTS -->
+        <div class="time-slots">
+          <button type="button" class="slot">10–12 PM</button>
+          <button type="button" class="slot">12–2 PM</button>
+          <button type="button" class="slot">2–4 PM</button>
+          <button type="button" class="slot">4–6 PM</button>
+        </div>
+
+        <input type="hidden" id="timeSlot" required />
+
+     <button class="demo-btn" type="submit">
+  Book Demo
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+    <path d="M5 12h14"/>
+    <path d="M13 5l7 7-7 7"/>
+  </svg>
+</button>
+
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- SIMPLE PRICE REASSURANCE -->
+<section class="section" id="pricing" style="background:#fff">
+  <div class="container center">
+
+    <h2>Simple Monthly Plan</h2>
+    <p>Koi contract nahi. Pasand aaye tabhi continue.</p><br>
+
+    <div class="price-box" style="max-width:420px;margin:auto">
+      <h3>All Access</h3>
+      <div class="price">₹3,000 / month</div>
+      <p>No lock-in • Cancel anytime</p><br>
+      <a href="#demo" class="btn">Pehle Demo Dekho →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="section final">
+  <div class="container">
+    <h2>Next Deal Ready Rakho.</h2>
+    <p>Live inventory ke saath client ke saamne jao.</p><br>
+    <a href="#demo" class="btn" style="background:#fff;color:var(--red)">Book Free Demo</a>
+  </div>
+</section>
+
+<!-- SIMPLE TRUST FOOTER -->
+<footer style="background:#0f172a;color:#cbd5e1;padding:40px 0">
+  <div class="container center">
+
+    <img src="images/white.png" alt="RealBetter" style="height:42px;margin:auto;margin-bottom:14px">
+
+    <p style="font-size:14px;margin-bottom:8px">
+      Helping Real Estate Agents Close Faster with Verified Inventory
+    </p>
+
+    <p style="font-size:13px;margin-bottom:6px">
+      📞 Support: +91-93 55 66 88 33 | 🕘 Mon–Sat, 10AM–7PM
+    </p>
+<p style="font-size:12px;opacity:.7">
+  RealBetter, Gurgaon, India • Serving 11,000+ agents across NCR
+</p>
+
+    <p style="font-size:12px;opacity:.7">
+      © 2026 RealBetter. Presidea Tech Pvt Ltd. All rights reserved.
+    </p>
+
+  </div>
+</footer>
+
+<script>
+/* ===============================
+   TIME SLOT SELECTION
+================================ */
+const slots = document.querySelectorAll(".slot");
+const timeInput = document.getElementById("timeSlot");
+
+slots.forEach(btn => {
+  btn.addEventListener("click", () => {
+    slots.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    timeInput.value = btn.innerText.trim();
+  });
+});
+
+/* ===============================
+   FORM SUBMIT — API POST
+================================ */
+const form = document.getElementById("demoForm");
+const btn = form.querySelector("button");
+
+form.addEventListener("submit", async function(e){
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("mobile").value.trim();
+  const date = document.getElementById("date").value;
+  const time = document.getElementById("timeSlot").value;
+
+  if(!name){ alert("Enter name"); return; }
+  if(!/^[6-9]\d{9}$/.test(phone)){ alert("Enter valid mobile"); return; }
+  if(!date){ alert("Select date"); return; }
+  if(!time){ alert("Select time slot"); return; }
+
+  btn.disabled = true;
+  btn.innerText = "Booking...";
+
+  try{
+    const res = await fetch("https://www.abhrabanerjee.com/api/rb_lead",{
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    name,
+    mobile: phone,   // ✅ send correct variable
+    date,
+    timeSlot: time   // ✅ match backend field
+  })
+});
+
+
+    if(res.ok){
+      form.innerHTML = `
+        <h3 style="color:#16a34a">✅ Demo Booked Successfully</h3>
+        <p style="margin-top:10px">Our RM will call you shortly.</p>
+      `;
+    }else{
+      throw new Error();
+    }
+  }catch(err){
+    alert("Something went wrong. Please try again.");
+    btn.disabled = false;
+    btn.innerText = "Book Demo";
+  }
+});
+</script>
+
+<script>
+function toggleReel(card){
+  const video = card.querySelector("video");
+
+  // stop all other videos
+  document.querySelectorAll(".reel-card video").forEach(v => {
+    if(v !== video){
+      v.pause();
+      v.currentTime = 0;
+      v.parentElement.classList.remove("playing");
+      v.muted = true;
+    }
+  });
+
+  if(video.paused){
+    video.muted = false;
+    video.play();
+    card.classList.add("playing");
+  }else{
+    video.pause();
+    card.classList.remove("playing");
+  }
+}
+</script>
+
+
+<script>
+const header = document.getElementById("rb-header");
+const logo = document.getElementById("rb-logo-img");
+
+window.addEventListener("scroll", () => {
+  if(window.scrollY > 60){
+    header.classList.add("scrolled");
+    logo.src = "images/black.png";
+  }else{
+    header.classList.remove("scrolled");
+    logo.src = "images/white.png";
+  }
+});
+</script>
+
+</body>
+</html>
