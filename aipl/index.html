@@ -2338,14 +2338,17 @@ p{
     </p>
 
     <div class="form-wrap">
-      <input placeholder="Your Name" required>
-      <input placeholder="Mobile Number" required>
-      <input placeholder="Email (optional)">
-      <button>Request Brochure</button>
-      <small style="color:var(--text-muted)">
-        *Offers subject to availability
-      </small>
-    </div>
+  <form id="enquiryForm">
+    <input name="name" placeholder="Your Name" required>
+    <input name="phone" placeholder="Mobile Number" required>
+    <input name="email" placeholder="Email (optional)">
+    <button type="submit">Request Brochure</button>
+    <small style="color:var(--text-muted)">
+      *Offers subject to availability
+    </small>
+  </form>
+</div>
+
   </div>
 </section>
 <footer class="site-footer">
@@ -2607,6 +2610,47 @@ nextBtns.forEach(btn => {
     if (!card.classList.contains('is-zoomed')) {
       scrollBox.scrollLeft = 0;
       scrollBox.scrollTop = 0;
+    }
+  });
+})();
+</script>
+<script>
+(() => {
+  const form = document.getElementById("enquiryForm");
+
+  if (!form) return;
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    const payload = {
+      name: formData.get("name"),
+      phone: formData.get("phone"),
+      email: formData.get("email"),
+      project: "AIPL Riviera Sector 103",
+      source: "Website Landing Page"
+    };
+
+    try {
+      const res = await fetch("https://YOUR_API_ENDPOINT_HERE", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (!res.ok) throw new Error("Submission failed");
+
+      // Success UX
+      form.reset();
+      alert("Thank you! Our team will contact you shortly.");
+
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong. Please try again.");
     }
   });
 })();
