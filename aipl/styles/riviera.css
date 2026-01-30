@@ -1,0 +1,122 @@
+/* ===============================
+   RIVIERA LANDING OVERRIDES
+================================ */
+
+/* COLOR SYSTEM */
+:root{
+  --riviera-bg:#0a0a0a;
+  --riviera-panel:#111;
+  --riviera-text:#f5f5f5;
+  --riviera-muted:rgba(255,255,255,.75);
+  --riviera-accent:#ffffff;
+}
+
+/* BASE */
+body{
+  background:var(--riviera-bg);
+  color:var(--riviera-text);
+}
+
+/* HEADER */
+.lp-header{
+  position:fixed;
+  top:16px;
+  left:0;
+  right:0;
+  z-index:999;
+}
+
+.lp-header-inner{
+  max-width:1180px;
+  margin:auto;
+  padding:14px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  background:rgba(15,15,15,.55);
+  backdrop-filter:blur(14px);
+  border-radius:18px;
+}
+
+.lp-header img{height:40px;}
+
+.lp-header a{
+  padding:10px 20px;
+  border-radius:999px;
+  background:#fff;
+  color:#111;
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(to bottom,rgba(0,0,0,.35),rgba(0,0,0,.85)),
+    url('../images/hero.jpg') center/cover no-repeat;
+}
+
+.hero-content{
+  max-width:680px;
+}
+
+.hero h1{
+  font-size:64px;
+  font-weight:500;
+}
+
+.hero h2{
+  font-size:20px;
+  opacity:.85;
+}
+
+.hero p{
+  font-size:18px;
+  margin-top:16px;
+}
+
+/* OFFER STRIP */
+.offer-strip{
+  display:flex;
+  gap:24px;
+  margin-top:22px;
+  font-size:13px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+/* GALLERY */
+.gallery-track{
+  display:flex;
+  gap:22px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+}
+
+.gallery-item{
+  min-width:80vw;
+  height:60vh;
+  scroll-snap-align:center;
+  border-radius:24px;
+  overflow:hidden;
+}
+
+/* WHY CARDS */
+.why-card{
+  background:var(--riviera-panel);
+  border-radius:22px;
+  padding:32px 26px;
+}
+
+/* FORM */
+.form-box button{
+  background:#fff;
+  color:#111;
+  border-radius:999px;
+  font-weight:600;
+}

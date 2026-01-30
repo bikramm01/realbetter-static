@@ -1,0 +1,2616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AIPL Riviera Sector 103 Gurgaon | Waterfront Residences</title>
+
+<link rel="icon" href="./favicon.png">
+
+<!-- PREMIUM TYPOGRAPHY -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  .section.compact {
+  padding: 90px 0;
+}
+
+/* =====================================================
+   COLOR SYSTEM — AIPL LUXURY
+===================================================== */
+:root{
+  --base-dark:#0E1416;
+  --base-soft:#141C1F;
+  --surface:#1A2428;
+
+  --aipl-teal:#22899A;
+  --aipl-teal-soft:rgba(34,137,154,.18);
+
+  --text-primary:#F5F7F8;
+  --text-muted:#B6C2C6;
+}
+
+/* =====================================================
+   RESET
+===================================================== */
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Inter', system-ui, sans-serif;
+  background:var(--base-dark);
+  color:var(--text-primary);
+  line-height:1.7;
+}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+/* =====================================================
+   LAYOUT
+===================================================== */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 24px;
+}
+.section{
+  padding:140px 0;
+}
+.section.soft{
+  background:var(--base-soft);
+}
+.center{text-align:center}
+
+.grid-2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:90px;
+  align-items:center;
+}
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:44px;
+}
+
+/* =====================================================
+   HEADER (REALBETTER FRAME)
+/* =========================
+ /* =================================
+   ROOT COLORS (ensure these exist)
+================================= */
+
+:root{
+  --base-dark:#0E1416;
+  --base-soft:#141C1F;
+  --surface:#1A2428;
+
+  --aipl-teal:#22899A;
+
+  --text-primary:#F5F7F8;
+  --text-muted:#B6C2C6;
+}
+
+/* =================================
+   HEADER BASE
+================================= */
+
+.rb-header{
+  position:fixed;
+  top:18px;
+  left:0;
+  right:0;
+  z-index:999;
+  transition:all .45s cubic-bezier(.19,1,.22,1);
+}
+
+/* Transparent initial state */
+.rb-header-inner{
+  max-width:1240px;
+  margin:auto;
+  padding:18px 32px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  background:transparent;
+  border-radius:26px;
+
+  transition:all .45s cubic-bezier(.19,1,.22,1);
+}
+
+/* =================================
+   LOGO
+================================= */
+
+.rb-logo img{
+  height:44px;
+  display:block;
+  transition:transform .3s ease;
+}
+
+/* =================================
+   NAV (DESKTOP)
+================================= */
+
+.rb-nav{
+  display:flex;
+  gap:34px;
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#E5E7EB;
+}
+
+.rb-nav a{
+  position:relative;
+  padding:6px 0;
+}
+
+.rb-nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:1px;
+  background:var(--aipl-teal);
+  transition:width .35s ease;
+}
+
+.rb-nav a:hover{
+  color:var(--text-primary);
+}
+
+.rb-nav a:hover::after{
+  width:100%;
+}
+
+/* =================================
+   CTA BUTTON
+================================= */
+
+.rb-cta{
+  padding:14px 34px;
+  background:linear-gradient(
+    135deg,
+    #22899A,
+    #1F7785
+  );
+  color:#fff;
+
+  border-radius:999px;
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  font-weight:600;
+
+  box-shadow:
+    0 12px 26px rgba(34,137,154,.45),
+    inset 0 1px 0 rgba(255,255,255,.25);
+
+  transition:all .35s cubic-bezier(.19,1,.22,1);
+}
+
+.rb-cta:hover{
+  transform:translateY(-2px);
+  box-shadow:
+    0 20px 42px rgba(34,137,154,.55),
+    inset 0 1px 0 rgba(255,255,255,.35);
+}
+
+/* =================================
+   SCROLLED STATE
+================================= */
+
+.rb-header.scrolled .rb-header-inner{
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(20,28,31,.88),
+      rgba(14,20,22,.94)
+    );
+
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.45),
+    inset 0 1px 0 rgba(255,255,255,.04);
+
+  padding:14px 28px;
+}
+
+.rb-header.scrolled .rb-nav{
+  color:var(--text-muted);
+}
+
+/* =================================
+   MOBILE LOGIC (IMPORTANT)
+================================= */
+
+@media (max-width:768px){
+
+  /* Hide menu on mobile */
+  .rb-nav{
+    display:none;
+  }
+
+  .rb-header{
+    top:12px;
+  }
+
+  .rb-header-inner{
+    padding:14px 18px;
+    min-height:56px;
+    border-radius:18px;
+  }
+
+  .rb-logo img{
+    height:34px;
+  }
+
+  .rb-cta{
+    padding:10px 18px;
+    font-size:10px;
+    letter-spacing:.12em;
+    box-shadow:0 6px 14px rgba(34,137,154,.35);
+  }
+}
+
+/* =====================================================
+   HERO (CINEMATIC — PREMIUM)
+===================================================== */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  position:relative;
+  overflow:hidden;
+}
+
+/* =====================================================
+   HERO BACKGROUND
+===================================================== */
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(14,20,22,.18),
+      rgba(14,20,22,.65)
+    ),
+    url('./images/hero.jpg') center / cover no-repeat;
+
+  transform:scale(1.04);
+  will-change:transform;
+  z-index:-1;
+}
+
+/* =====================================================
+   HERO CONTENT (EDITORIAL LEFT COLUMN)
+===================================================== */
+
+.hero-content{
+  position:relative;
+  max-width:640px;
+  margin-left:clamp(6vw, 10vw, 14vw);
+  margin-right:auto;
+  z-index:2;
+}
+
+/* subtle ambient accent */
+.hero-content::after{
+  content:"";
+  position:absolute;
+  top:-100px;
+  left:-120px;
+  width:180px;
+  height:180px;
+  background:var(--aipl-teal-soft);
+  filter:blur(120px);
+  border-radius:50%;
+  opacity:.6;
+  pointer-events:none;
+}
+
+/* =====================================================
+   EYEBROW (FIXED VISIBILITY)
+===================================================== */
+
+.eyebrow{
+  display:inline-block;
+  font-size:11px;
+  letter-spacing:.35em;
+  text-transform:uppercase;
+
+  color:var(--text-primary);
+  opacity:.75;
+
+  text-shadow:
+    0 2px 10px rgba(0,0,0,.45),
+    0 0 24px rgba(0,0,0,.35);
+
+  margin-bottom:20px;
+}
+
+/* =====================================================
+   TYPOGRAPHY
+===================================================== */
+
+.hero h1{
+  font-family:'Playfair Display', serif;
+  font-size:76px;
+  font-weight:500;
+  line-height:1.05;
+  margin-bottom:18px;
+  color:var(--text-primary);
+  letter-spacing:.01em;
+
+  text-shadow:
+    0 0 40px rgba(0,0,0,.45),
+    0 8px 24px rgba(0,0,0,.35);
+}
+
+.hero-subtext{
+  font-size:18px;
+  line-height:1.6;
+  max-width:520px;
+  color:rgba(245,247,248,.72);
+  margin-bottom:42px;
+}
+
+/* =====================================================
+   CTA (CONFIDENT, CALM)
+===================================================== */
+
+.btn-primary{
+  display:inline-block;
+  padding:16px 42px;
+  border-radius:999px;
+  background:var(--aipl-teal);
+  color:#fff;
+  font-size:13px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:600;
+
+  box-shadow:
+    0 14px 36px rgba(34,137,154,.45),
+    inset 0 1px 0 rgba(255,255,255,.25);
+
+  transition:all .4s cubic-bezier(.19,1,.22,1);
+}
+
+.btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:
+    0 20px 48px rgba(34,137,154,.55);
+}
+
+/* =====================================================
+   QUIET META (ARCHITECTURAL CAPTION)
+===================================================== */
+
+.hero-meta{
+  display:flex;
+  gap:26px;
+  margin-top:46px;
+  font-size:11px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:rgba(182,194,198,.65);
+}
+
+/* =====================================================
+   HERO FLOW (ATMOSPHERIC)
+===================================================== */
+
+.hero-flow{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  pointer-events:none;
+}
+
+.hero-flow svg{
+  width:100%;
+  height:120px;
+  stroke:var(--aipl-teal);
+  stroke-width:.8;
+  opacity:.06;
+  fill:none;
+}
+
+/* =====================================================
+   MOBILE — SAME ALIGNMENT, TIGHTER
+===================================================== */
+
+@media(max-width:768px){
+  .hero-content{
+    margin-left:24px;
+    margin-right:24px;
+  }
+
+  .hero h1{
+    font-size:48px;
+  }
+
+  .hero-subtext{
+    font-size:16px;
+  }
+
+  .hero-meta{
+    gap:18px;
+  }
+}
+/* =====================================================
+   AGENT ADVANTAGE (QUIET, INSIDER)
+===================================================== */
+
+.hero-agent{
+  margin-top:32px;
+  max-width:520px;
+}
+
+.agent-label{
+  display:block;
+  font-size:10px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  margin-bottom:10px;
+  opacity:.7;
+}
+
+.agent-offers{
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+  font-size:12px;
+  color:rgba(245,247,248,.65);
+}
+
+.agent-offers span{
+  position:relative;
+  padding-left:14px;
+}
+
+.agent-offers span::before{
+  content:"•";
+  position:absolute;
+  left:0;
+  color:var(--aipl-teal);
+  opacity:.6;
+}
+
+
+/* =====================================================
+   MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: no-preference){
+  .hero::before{
+    animation:contourDrift 60s linear infinite alternate;
+  }
+
+  @keyframes contourDrift{
+    from{ background-position:center top; }
+    to{ background-position:center bottom; }
+  }
+}
+
+/* =====================================================
+   MOBILE — LEFT ALIGNED (NO CENTERING)
+===================================================== */
+
+@media(max-width:768px){
+  .hero{
+    justify-content:flex-start;
+  }
+
+  .hero-content{
+    margin-left:24px;
+    margin-right:24px;
+  }
+
+  .hero-offers{
+    justify-content:flex-start;
+  }
+
+  .hero h1{
+    font-size:48px;
+    text-shadow:
+      0 0 30px rgba(0,0,0,.5),
+      0 6px 18px rgba(0,0,0,.4);
+  }
+
+  .hero p{
+    font-size:17px;
+    color:rgba(245,247,248,.75);
+  }
+}
+
+
+/* =====================================================
+   MOTION
+===================================================== */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .9s cubic-bezier(.19,1,.22,1);
+}
+.reveal.visible{
+  opacity:1;
+  transform:none;
+}
+
+/* =====================================================
+   TYPOGRAPHY
+===================================================== */
+h2{
+  font-family:'Playfair Display', serif;
+  font-size:46px;
+  font-weight:500;
+  margin-bottom:22px;
+}
+h3{
+  font-family:'Playfair Display', serif;
+  font-size:22px;
+  font-weight:500;
+}
+p{
+  font-size:17px;
+  color:var(--text-muted);
+}
+
+
+/* =====================================================
+   STATEMENT — THEME CORRECTED (DARK LUXURY)
+===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400&display=swap');
+
+/* SECTION */
+.statement{
+  position:relative;
+  padding:160px 24px 220px;
+  overflow:hidden;
+  background:linear-gradient(180deg,#0f1f1c,#162926);
+}
+
+/* LAYOUT */
+.statement-inner{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:72px;
+  flex-direction:row; /* image left, text right */
+}
+
+/* IMAGE */
+.statement-image{
+  flex: 1;
+  width: 100%;
+  min-height: 360px;
+  background-image: url("images/bird.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.85;
+
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.statement-image:hover{
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+/* TEXT */
+.statement-content{
+  flex:1;
+}
+
+.statement-heading{
+  font-family:'Cormorant Garamond', serif;
+  font-size:52px;
+  font-weight:600;
+  margin-bottom:28px;
+  color:#ffffff;
+  letter-spacing:0.5px;
+  line-height:1.15;
+}
+
+.statement-text{
+  font-family:'Inter', sans-serif;
+  font-size:18px;
+  line-height:1.8;
+  font-weight:300;
+  color:rgba(255,255,255,0.75);
+  max-width:520px;
+}
+
+/* CURVED LINE */
+.statement-curve{
+  position:absolute;
+  bottom:40px;
+  left:0;
+  width:100%;
+  height:120px;
+  pointer-events:none;
+}
+
+.statement-curve svg{
+  width:100%;
+  height:100%;
+}
+
+/* MOBILE */
+@media (max-width:768px){
+  .statement{
+    padding:110px 20px 180px;
+  }
+
+  .statement-inner{
+    flex-direction:column;
+    text-align:center;
+    gap:40px;
+  }
+
+  .statement-image{
+    min-height:240px;
+  }
+
+  .statement-heading{
+    font-size:38px;
+  }
+
+  .statement-text{
+    margin:auto;
+  }
+}
+
+
+
+/* =====================================================
+   IMAGE CARD
+===================================================== */
+
+.image-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+}
+.image-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+/* Hover effect (desktop & laptops) */
+@media (hover: hover) {
+  .image-card:hover img {
+    transform: scale(1.08);
+    filter: brightness(1.05) contrast(1.05);
+  }
+}
+
+
+.image-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.05),
+    rgba(0,0,0,0.2)
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+@media (hover: hover) {
+  .image-card:hover::after {
+    opacity: 1;
+  }
+}
+.image-card:active img {
+  transform: scale(1.05);
+}
+
+/* =====================================================
+   LIST
+===================================================== */
+.lux-list{
+  list-style:none;
+  margin-top:28px;
+}
+.lux-list li{
+  margin-bottom:14px;
+  font-size:15px;
+  color:var(--text-muted);
+}
+
+/* =========================================
+   FORCE LEFT / RIGHT LAYOUT (BULLETPROOF)
+========================================= */
+
+#layout-plan .grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Default order */
+#layout-plan .image-card {
+  order: 1;
+}
+
+#layout-plan .layout-content {
+  order: 2;
+}
+
+/* Swap left/right */
+#layout-plan.reverse .image-card {
+  order: 2;
+}
+
+#layout-plan.reverse .layout-content {
+  order: 1;
+}
+
+/* =========================================
+   Mobile
+========================================= */
+@media (max-width: 900px) {
+  #layout-plan .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Content first on mobile */
+  #layout-plan .layout-content {
+    order: 1;
+    max-width: 100%;
+  }
+
+  /* Image after content on mobile */
+  #layout-plan .image-card {
+    order: 2;
+    margin-top: 40px;
+  }
+}
+
+
+/* =========================================
+   Zoomable Image Container
+========================================= */
+.image-card {
+  position: relative;
+  overflow: hidden;
+  cursor: grab;
+}
+
+/* Image */
+.zoomable-image {
+  width: 100%;
+  height: auto;
+  transform-origin: center;
+  transition: transform 0.25s ease;
+  user-select: none;
+  pointer-events: all;
+}
+
+/* Zoomed state */
+.image-card.is-zoomed .zoomable-image {
+  cursor: grab;
+}
+
+/* While dragging */
+.image-card.is-dragging {
+  cursor: grabbing;
+}
+/* =========================================
+   Fix excessive vertical padding
+========================================= */
+#layout-plan {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* =====================================================
+   GREEN LIVING — AIPL RIVIERA (FINAL FIXED)
+   Matches global typography, spacing & luxury tone
+===================================================== */
+
+.green-living {
+  position: relative;
+  padding: 140px 24px;
+  background: url("./images/leaf-bg.png") center / cover no-repeat;
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+/* Controlled botanical overlay (quiet luxury) */
+.green-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      rgba(9, 33, 17, 0.88),
+      rgba(12, 48, 24, 0.92)
+    ),
+    radial-gradient(
+      circle at 30% 20%,
+      rgba(20, 28, 31, 0.25),
+      transparent 60%
+    );
+}
+
+/* Container */
+.green-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Eyebrow — matches site-wide eyebrow language */
+.green-eyebrow {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  color: rgba(245,247,248,.75);
+  margin-bottom: 18px;
+}
+
+/* Title row */
+.green-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 68px;
+}
+
+.green-title h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 500;
+  letter-spacing: .02em;
+  color: var(--text-primary);
+}
+
+/* IGBC / emblem */
+.green-emblem {
+  width: 56px;
+  height: auto;
+  opacity: .95;
+}
+
+/* Grid layout */
+.green-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 54px 42px;
+  justify-items: center;
+}
+
+/* Individual item */
+.green-item {
+  max-width: 220px;
+  transition: transform .45s cubic-bezier(.19,1,.22,1);
+}
+
+/* Icon styling (inline SVG) */
+.green-icon {
+  width: 56px;
+  height: 56px;
+  color: #ffffff;
+  opacity: .88;
+  transition:
+    opacity .35s ease,
+    transform .45s cubic-bezier(.19,1,.22,1);
+}
+
+/* Label */
+.green-item p {
+  margin-top: 14px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: rgba(245,247,248,.85);
+}
+
+/* Centered final item */
+.green-item.wide {
+  grid-column: span 3;
+}
+
+/* Micro-interaction (desktop only) */
+@media (hover:hover) {
+  .green-item:hover .green-icon {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+/* Footnote */
+.green-note {
+  margin-top: 72px;
+  font-size: 12px;
+  color: rgba(245,247,248,.6);
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+  .green-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px 34px;
+  }
+
+  .green-item.wide {
+    grid-column: span 2;
+  }
+
+  .green-title h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 520px) {
+  .green-living {
+    padding: 110px 20px;
+  }
+
+  .green-grid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
+  .green-item.wide {
+    grid-column: span 1;
+  }
+
+  .green-title {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .green-title h2 {
+    font-size: 32px;
+  }
+}
+
+/* =====================================================
+   LIFESTYLE SECTION — COUPLE (PREMIUM)
+===================================================== */
+
+.lifestyle{
+  padding:160px 0;
+  background:linear-gradient(
+    to bottom,
+    var(--base-dark),
+    var(--base-soft)
+  );
+}
+
+.lifestyle-wrap{
+  position:relative;
+}
+
+/* IMAGE */
+.lifestyle-image{
+  position:relative;
+  overflow:hidden;
+  border-radius:38px;
+}
+
+.lifestyle-image img{
+  width:100%;
+  height:75vh;
+  object-fit:cover;
+  transform:scale(1.02);
+  transition:transform 1.2s cubic-bezier(.19,1,.22,1);
+}
+
+/* subtle cinematic overlay */
+.lifestyle-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(14,20,22,.65),
+      rgba(14,20,22,.15)
+    );
+}
+
+/* hover micro-luxury */
+@media (hover:hover){
+  .lifestyle-image:hover img{
+    transform:scale(1);
+  }
+}
+
+/* CAPTION */
+.lifestyle-caption{
+  position:absolute;
+  left:70px;
+  bottom:70px;
+  max-width:520px;
+  z-index:2;
+}
+
+.lifestyle-eyebrow{
+  display:block;
+  font-size:10px;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:rgba(245,247,248,.7);
+  margin-bottom:14px;
+}
+
+.lifestyle-caption h2{
+  font-size:42px;
+  line-height:1.15;
+  margin-bottom:16px;
+}
+
+.lifestyle-caption p{
+  font-size:16px;
+  color:rgba(245,247,248,.72);
+  max-width:480px;
+}
+
+/* =====================================================
+   MOBILE — KEEP IT QUIET
+===================================================== */
+
+@media(max-width:768px){
+  .lifestyle-image img{
+    height:60vh;
+  }
+
+  .lifestyle-caption{
+    position:relative;
+    left:auto;
+    bottom:auto;
+    margin-top:28px;
+    padding:0 24px;
+  }
+
+  .lifestyle-caption h2{
+    font-size:32px;
+  }
+}
+
+
+
+
+
+.hero-experience {
+  position: relative;
+  padding: 140px 0;
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.402),
+      rgba(0, 0, 0, 0.402)
+    ),
+    url("images/hero-riviera.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/* Optional overlay for readability */
+.hero-experience::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 2, 2, 0.35);
+  z-index: 0;
+}
+
+/* Keep content above overlay */
+.hero-experience .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Optional text tuning */
+.hero-experience h2,
+.hero-experience p {
+  color: #fff;
+}
+
+/* =====================================================
+   SIGNATURE GALLERY — LUXURY FRAME
+===================================================== */
+
+.signature-gallery{
+  background:var(--base-dark);
+}
+
+.gallery-shell{
+  display:grid;
+  grid-template-columns:1fr 1.4fr;
+  gap:90px;
+  align-items:center;
+}
+
+/* LEFT INFO */
+.gallery-info{
+  max-width:420px;
+}
+
+.gallery-eyebrow{
+  font-size:10px;
+  letter-spacing:.35em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  display:block;
+  margin-bottom:18px;
+}
+
+.gallery-info h2{
+  font-size:44px;
+  line-height:1.1;
+  margin-bottom:18px;
+}
+
+.gallery-info p{
+  font-size:16px;
+  color:rgba(182,194,198,.85);
+}
+
+/* CONTROLS */
+.gallery-controls{
+  display:flex;
+  gap:16px;
+  margin-top:42px;
+}
+
+.g-btn{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.12);
+  background:transparent;
+  color:#fff;
+  font-size:20px;
+  cursor:pointer;
+  transition:all .3s ease;
+}
+
+.g-btn:hover{
+  background:var(--aipl-teal);
+  border-color:var(--aipl-teal);
+}
+
+/* IMAGE FRAME */
+.gallery-frame{
+  position:relative;
+  overflow:hidden;
+  border-radius:34px;
+}
+
+.gallery-frame img{
+  width:100%;
+  height:70vh;
+  object-fit:cover;
+  display:block;
+  transform:scale(1.02);
+  transition:transform 1.2s cubic-bezier(.19,1,.22,1);
+}
+
+/* subtle premium outline */
+.frame-outline{
+  position:absolute;
+  inset:14px;
+  border-radius:26px;
+  border:1px solid rgba(255,255,255,.12);
+  pointer-events:none;
+}
+
+/* hover micro-motion */
+@media (hover:hover){
+  .gallery-frame:hover img{
+    transform:scale(1);
+  }
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .gallery-shell{
+    grid-template-columns:1fr;
+    gap:50px;
+  }
+
+  .gallery-frame img{
+    height:52vh;
+  }
+
+  .gallery-info h2{
+    font-size:34px;
+  }
+}
+
+/* =====================================================
+   MOBILE GALLERY CONTROLS — UNDER IMAGE
+===================================================== */
+
+@media(max-width:900px){
+
+  /* Stack layout already handled */
+  .gallery-controls{
+    margin-top:0;
+  }
+
+  /* Move controls below image */
+  .gallery-frame + .gallery-info .gallery-controls{
+    display:none; /* safety: if structure changes */
+  }
+
+  /* Create mobile-only controls under image */
+  .gallery-shell{
+    position:relative;
+  }
+
+  .gallery-frame{
+    display:flex;
+    flex-direction:column;
+  }
+
+  .gallery-frame::after{
+    content:"";
+    height:28px; /* breathing space */
+  }
+
+  .gallery-frame .mobile-controls{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    margin-top:18px;
+  }
+
+  /* Hide desktop controls */
+  .gallery-info .gallery-controls{
+    display:none;
+  }
+}
+
+@media(max-width:900px){
+  .gallery-frame{
+    align-items:center;
+    text-align:center;
+  }
+
+  .mobile-controls{
+    display:flex;
+    justify-content:center;
+    width:100%;
+  }
+}
+
+/* =====================================================
+   BUTTON VISIBILITY FIX
+===================================================== */
+
+/* Desktop: hide mobile buttons */
+.mobile-controls{
+  display:none;
+}
+
+/* Mobile: hide desktop buttons, show mobile buttons */
+@media(max-width:900px){
+  .gallery-info .gallery-controls{
+    display:none;
+  }
+
+  .gallery-frame .mobile-controls{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    margin-top:18px;
+  }
+}
+/* =========================================
+   GALLERY CONTROLS — FINAL LOCK (DESKTOP)
+========================================= */
+
+/* DESKTOP ONLY */
+@media (min-width: 901px) {
+
+  /* Make left content column a positioning context */
+  .gallery-info {
+    position: relative;
+    padding-bottom: 90px; /* reserve space for arrows */
+  }
+
+  /* Lock arrows to bottom-center of content */
+  .gallery-info .gallery-controls {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex !important;
+    gap: 16px;
+    align-items: center;
+  }
+
+  /* Ensure mobile arrows never appear on desktop */
+  .gallery-frame .mobile-controls {
+    display: none !important;
+  }
+}
+
+/* MOBILE SAFETY (no positioning override) */
+@media (max-width: 900px) {
+  .gallery-info .gallery-controls {
+    position: static;
+    transform: none;
+  }
+}
+
+
+/* =====================================================
+   FEATURE CARDS
+===================================================== */
+.feature-card{
+  background:var(--surface);
+  padding:48px 40px;
+  border-radius:32px;
+}
+.feature-card p{
+  font-size:15px;
+  color:var(--text-muted);
+  margin-top:12px;
+}
+
+.feature-card {
+  padding: 40px 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+.feature-card.morning {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 223, 186, 0.35),
+    rgba(255, 255, 255, 0.1)
+  );
+}
+.feature-card.afternoon {
+  background: linear-gradient(
+    135deg,
+    rgba(180, 220, 200, 0.35),
+    rgba(255, 255, 255, 0.1)
+  );
+}
+.feature-card.evening {
+  background: linear-gradient(
+    135deg,
+    rgba(120, 140, 180, 0.4),
+    rgba(40, 50, 90, 0.15)
+  );
+}
+.feature-card h3 {
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.feature-card p {
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   LOCATION SECTION — POLISH
+===================================================== */
+
+.location-grid{
+  align-items:center;
+}
+
+/* MAP */
+.location-map img{
+  transform:scale(1.04);
+  transition:transform 1.2s cubic-bezier(.19,1,.22,1);
+}
+
+@media (hover:hover){
+  .location-map:hover img{
+    transform:scale(1);
+  }
+}
+
+/* CONTENT */
+.location-content h2{
+  margin-bottom:18px;
+}
+
+.location-intro{
+  max-width:460px;
+  margin-bottom:28px;
+}
+
+/* LIST */
+.location-list{
+  margin-top:6px;
+}
+
+.lux-list-icons li{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  margin-bottom:18px;
+}
+
+.lux-list-icons li span:last-child{
+  font-size:15px;
+  line-height:1.6;
+}
+
+/* ICON */
+.lux-icon{
+  width:20px;
+  height:20px;
+  color:var(--aipl-teal);
+  opacity:.85;
+  flex-shrink:0;
+  margin-top:2px;
+}
+
+.lux-icon svg{
+  width:100%;
+  height:100%;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .location-intro{
+    max-width:100%;
+  }
+}
+
+/* =====================================================
+   LOCATION MAP — CLICK ZOOM
+===================================================== */
+
+.location-map{
+  overflow:hidden;
+  border-radius:34px;
+  cursor:zoom-in;
+}
+
+.location-map img{
+  width:100%;
+  height:auto;
+  transform:scale(1.06);
+  transition:transform .8s cubic-bezier(.19,1,.22,1);
+}
+
+/* Hover (desktop only – subtle) */
+@media (hover:hover){
+  .location-map:hover img{
+    transform:scale(1.12);
+  }
+}
+
+/* Active zoom state */
+.location-map.zoomed{
+  cursor:zoom-out;
+}
+
+.location-map.zoomed img{
+  transform:scale(1.35); /* actual zoom */
+}
+
+/* Mobile */
+@media(max-width:900px){
+  .location-map{
+    cursor:default;
+  }
+}
+/* ===============================
+   LEGACY SECTION
+================================ */
+
+.section {
+  padding: 140px 24px;
+  text-align: center;
+}
+
+.section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+.section p {
+  max-width: 560px;
+  margin: 0 auto 56px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(245,247,248,.8);
+}
+
+/* Stats row */
+.legacy-stats {
+  display: flex;
+  justify-content: center;
+  gap: 72px;
+}
+
+/* Individual stat */
+.legacy-stats div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Number */
+.legacy-stats strong {
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: .02em;
+}
+
+/* Label */
+.legacy-stats span {
+  margin-top: 6px;
+  font-size: 13px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  opacity: .7;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+  .section {
+    padding: 110px 20px;
+  }
+
+  .section h2 {
+    font-size: 36px;
+  }
+
+  .legacy-stats {
+    gap: 48px;
+  }
+
+  .legacy-stats strong {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 520px) {
+  .section h2 {
+    font-size: 32px;
+  }
+
+  .section p {
+    font-size: 15px;
+    margin-bottom: 48px;
+  }
+
+  .legacy-stats {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .legacy-stats strong {
+    font-size: 36px;
+  }
+
+  .legacy-stats span {
+    font-size: 12px;
+    letter-spacing: .18em;
+  }
+}
+
+/* =====================================================
+   FORM
+===================================================== */
+.form-wrap{
+  max-width:440px;
+  margin:70px auto 0;
+}
+.form-wrap input,
+.form-wrap button{
+  width:100%;
+  padding:16px;
+  margin-bottom:16px;
+  border-radius:14px;
+  border:none;
+  font-size:15px;
+}
+.form-wrap input{
+  background:var(--surface);
+  color:#fff;
+}
+.form-wrap button{
+  background:var(--aipl-teal);
+  color:#fff;
+  font-weight:600;
+  border-radius:999px;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+.site-footer {
+  padding: 20px 10px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(245,247,248,.6);
+}
+
+.site-footer span {
+  font-size: 12px;
+  opacity: .85;
+}
+
+
+.footer-logo{
+  display: block;
+  margin: 0 auto 10px; /* center + space below */
+  max-width: 120px;    /* adjust size */
+  height: auto;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media(max-width:900px){
+  .grid-2,.grid-3{grid-template-columns:1fr}
+  .hero h1{font-size:48px}
+  .gallery-strip img{height:52vh}
+}
+
+
+
+/* Tooltip */
+.wa-tooltip {
+  position: absolute;
+  right: 70px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(5px);
+  pointer-events: none;
+}
+
+/* Active state (shown by JS) */
+.whatsapp-float.show-tooltip .wa-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Soft pulse ring */
+.whatsapp-float::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(37, 211, 102, 0.6);
+  opacity: 0;
+}
+
+.whatsapp-float.pulse::before {
+  animation: wa-pulse 1.2s ease-out;
+}
+
+@keyframes wa-pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+
+
+.whatsapp-float{
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  box-shadow: 0 12px 30px rgba(37,211,102,.45);
+  transition: transform .3s ease;
+}
+
+.whatsapp-float:hover{
+  transform: scale(1.08);
+}
+
+
+
+
+</style>
+</head>
+
+<body>
+
+<header class="rb-header">
+  <div class="rb-header-inner">
+    <a href="#" class="rb-logo"><img src="./aipl_logo.png"></a>
+    <nav class="rb-nav">
+      <a href="#overview">Overview</a>
+      <a href="#experience">Experience</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#location">Location</a>
+      <a href="#enquire">Enquire</a>
+    </nav>
+<a href="tel:+919355668833" class="rb-cta">
+  CALL +91 93 55 66 88 33
+</a>
+
+  </div>
+</header>
+<section class="hero">
+
+  <div class="container hero-content reveal">
+
+    <!-- Eyebrow (quiet, editorial) -->
+    <span class="eyebrow">AIPL Presents</span>
+
+    <!-- Hero Title -->
+    <h1>Riviera</h1>
+
+    <!-- Subtext (shorter, calmer) -->
+    <p class="hero-subtext">
+      Waterfront living, designed for calm and continuity.
+    </p>
+
+    <!-- Primary Action -->
+    <a href="#enquire" class="btn btn-primary">
+      Request Brochure
+    </a>
+
+    <!-- Quiet Metadata (Project Context) -->
+<div class="hero-meta">
+  <span>Waterfront Residences</span>
+  <span>Sector 103, Gurugram</span>
+</div>
+
+<!-- Agent Advantage (Subtle, Insider) -->
+<div class="hero-agent">
+  <span class="agent-label">Channel Partner Advantage</span>
+  <div class="agent-offers">
+    <span>Assured iPhone*</span>
+    <span>Priority Inventory</span>
+    <span>Best Commercials</span>
+  </div>
+</div>
+
+  </div>
+
+  <!-- Decorative Flow (keep extremely subtle) -->
+  <div class="hero-flow" aria-hidden="true">
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+      <path
+        d="M0,220
+           C180,160 360,260 540,220
+           C720,180 900,260 1080,210
+           C1260,170 1440,240 1440,240"
+      />
+    </svg>
+  </div>
+
+</section>
+<section class="statement reveal">
+  <div class="statement-inner">
+    <!-- IMAGE -->
+    <div class="statement-image"></div>
+
+    <!-- TEXT -->
+    <div class="statement-content">
+      <h2 class="statement-heading">A New Lease of Life</h2>
+      <p class="statement-text">
+        When winter arrives, the Greater Flamingo takes flight - travelling over
+        4,000 kilometres to the wetlands of Delhi NCR in search of renewal.
+        Beside this sanctuary lies a place designed for the same purpose:
+        where your search for a better life finds its home.
+      </p>
+    </div>
+  </div>
+
+  <!-- CURVED LINE -->
+  <div class="statement-curve">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path
+        d="M0,60 C240,120 480,120 720,80 960,40 1200,40 1440,80"
+        fill="none"
+        stroke="rgba(255,255,255,0.6)"
+        stroke-width="1.5"
+      />
+    </svg>
+  </div>
+</section>
+
+
+
+
+
+<section id="overview" class="section soft reveal">
+  <div class="container grid-2">
+    <div>
+      <h2>Planned Around Water & Space</h2>
+      <p>
+        Riviera follows a low-density planning philosophy,
+        allowing landscapes and water to remain part of daily life.
+      </p>
+      <ul class="lux-list">
+        <li>Water-facing residences</li>
+        <li>Low-density master planning</li>
+        <li>IGBC Platinum Pre-Certified</li>
+        <li>Designed for long-term liveability</li>
+      </ul>
+    </div>
+    <div class="image-card">
+      <img src="./images/waterfront.png">
+    </div>
+  </div>
+</section>
+
+
+<section class="section soft reveal" id="layout-plan">
+  <div class="container grid-2">
+
+    <!-- LEFT : IMAGE -->
+    <div class="image-card location-map">
+      <img
+  src="./images/landscape-plan.svg"
+  alt="AIPL Riviera Landscape Layout Plan"
+  class="zoomable-image"
+/>
+
+    </div>
+
+    <!-- RIGHT : CONTENT -->
+    <div class="layout-content">
+      <span class="eyebrow">Master Planning</span>
+      <h2>Landscape Planned as a Living Journey</h2>
+
+      <p class="location-intro">
+        The master plan at Riviera unfolds gradually - from a composed arrival
+        to open greens, water bodies, and intimate gardens. Each zone is placed
+        to balance movement, pause, and privacy.
+      </p>
+
+      <ul class="lux-list lux-list-icons">
+
+        <li>
+          <span class="lux-icon">✓</span>
+          <span>Arrival Plaza, Feature Roundabout & Drop-Off</span>
+        </li>
+
+        <li>
+          <span class="lux-icon">✓</span>
+          <span>Central Lake & Signature Pool Spine</span>
+        </li>
+
+        <li>
+          <span class="lux-icon">✓</span>
+          <span>Mindfulness Garden & Japanese Miyawaki Forest</span>
+        </li>
+
+        <li>
+          <span class="lux-icon">✓</span>
+          <span>Event Lawn, Pet Garden & Outdoor Fitness Zones</span>
+        </li>
+
+        <li>
+          <span class="lux-icon">✓</span>
+          <span>Landscape Undercrofts at Residential Towers</span>
+        </li>
+
+      </ul>
+
+      <p style="font-size:13px;color:var(--text-muted);margin-top:22px">
+        Landscape features are indicative and subject to final approvals.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- SVG SPRITE (place once, preferably near <body> start) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+
+  <symbol id="icon-sustainable" viewBox="0 0 48 48">
+    <path d="M8 26c8-2 14-8 16-16 8 4 14 12 14 20 0 10-8 18-18 18S2 40 2 30c0-2 2-4 6-4z"
+      fill="none" stroke="currentColor" stroke-width="1.6"/>
+  </symbol>
+
+  <symbol id="icon-health" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <path d="M24 4v6M24 38v6M4 24h6M38 24h6"
+      stroke="currentColor" stroke-width="1.6"/>
+  </symbol>
+
+  <symbol id="icon-climate" viewBox="0 0 48 48">
+    <rect x="10" y="14" width="10" height="20" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <rect x="24" y="10" width="14" height="24" fill="none" stroke="currentColor" stroke-width="1.6"/>
+  </symbol>
+
+  <symbol id="icon-water" viewBox="0 0 48 48">
+    <path d="M24 6s12 14 12 22a12 12 0 1 1-24 0c0-8 12-22 12-22z"
+      fill="none" stroke="currentColor" stroke-width="1.6"/>
+  </symbol>
+
+  <symbol id="icon-waste" viewBox="0 0 48 48">
+    <rect x="14" y="16" width="20" height="24" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <path d="M10 16h28M20 10h8"
+      stroke="currentColor" stroke-width="1.6"/>
+  </symbol>
+
+  <symbol id="icon-ev" viewBox="0 0 48 48">
+    <rect x="8" y="18" width="22" height="12" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <path d="M32 16v16M36 20h4M12 34a2 2 0 1 0 0 .1M24 34a2 2 0 1 0 0 .1"
+      stroke="currentColor" stroke-width="1.6"/>
+  </symbol>
+
+  <symbol id="icon-energy" viewBox="0 0 48 48">
+    <path d="M24 4c8 0 14 6 14 14 0 6-4 10-8 14H18c-4-4-8-8-8-14 0-8 6-14 14-14z"
+      fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <path d="M18 36h12M20 40h8"
+      stroke="currentColor" stroke-width="1.6"/>
+  </symbol>
+
+</svg>
+
+<!-- GREEN LIVING SECTION -->
+<section class="green-living">
+  <div class="green-overlay"></div>
+
+  <div class="green-container">
+    <span class="green-eyebrow">Green Living</span>
+
+    <div class="green-title">
+      <img src="./images/igbc.svg" alt="" class="green-emblem">
+      <h2>Green Living Elevated</h2>
+    </div>
+
+    <div class="green-grid">
+
+      <div class="green-item">
+        <svg class="green-icon"><use href="#icon-sustainable"></use></svg>
+        <p>Sustainable by Design</p>
+      </div>
+
+      <div class="green-item">
+        <svg class="green-icon"><use href="#icon-health"></use></svg>
+        <p>Healthier Indoors</p>
+      </div>
+
+      <div class="green-item">
+        <svg class="green-icon"><use href="#icon-climate"></use></svg>
+        <p>Climate Responsive<br>Building</p>
+      </div>
+
+      <div class="green-item">
+        <svg class="green-icon"><use href="#icon-water"></use></svg>
+        <p>Blue That Moves You</p>
+      </div>
+
+      <div class="green-item">
+        <svg class="green-icon"><use href="#icon-waste"></use></svg>
+        <p>Smart Waste<br>Management</p>
+      </div>
+
+      <div class="green-item">
+        <svg class="green-icon"><use href="#icon-ev"></use></svg>
+        <p>EV Charging Ready</p>
+      </div>
+
+      <div class="green-item wide">
+        <svg class="green-icon"><use href="#icon-energy"></use></svg>
+        <p>Energy Efficient Lighting & Equipment</p>
+      </div>
+
+    </div>
+
+    <p class="green-note">
+      Sustainability features are indicative and subject to final design,
+      approvals, and statutory guidelines.
+    </p>
+  </div>
+</section>
+
+
+
+
+
+
+<section id="experience" class="section reveal hero-experience">
+  <div class="container center">
+    <h2>A Day at Riviera</h2>
+    <p>Spaces that shape everyday moments.</p>
+  </div>
+
+  <div class="container grid-3" style="margin-top:90px">
+    <div class="feature-card morning">
+  <h3>Mornings</h3>
+  <p>Soft light, quiet balconies, and reflections on water.</p>
+</div>
+
+<div class="feature-card afternoon">
+  <h3>Afternoons</h3>
+  <p>Green views, calm interiors, and natural ventilation.</p>
+</div>
+
+<div class="feature-card evening">
+  <h3>Evenings</h3>
+  <p>Slow walks, water reflections, and shared landscapes.</p>
+</div>
+
+  </div>
+</section>
+
+
+<section class="section lifestyle reveal">
+  <div class="container lifestyle-wrap">
+
+    <!-- Image -->
+    <div class="lifestyle-image">
+      <img
+        src="./images/riviera/couple-balcony.png"
+        alt="Couple relaxing at Riviera waterfront residence"
+      />
+    </div>
+
+    <!-- Editorial Caption -->
+    <div class="lifestyle-caption">
+      <span class="lifestyle-eyebrow">Everyday Living</span>
+      <h2>Moments That Slow Time</h2>
+      <p>
+        Quiet mornings, shared views, and a sense of calm that stays
+        long after the day fades. Riviera is designed for lives lived
+        gently - together.
+      </p>
+    </div>
+
+  </div>
+</section>
+<section id="gallery" class="section reveal signature-gallery">
+
+  <div class="container gallery-shell">
+
+    <!-- LEFT CONTENT -->
+    <div class="gallery-info">
+      <span class="gallery-eyebrow">Lifestyle Amenities</span>
+      <h2 id="galleryTitle">Signature Pool</h2>
+      <p id="galleryDesc">
+        A calm, reflective pool designed as the visual heart of the community.
+      </p>
+
+      <div class="gallery-controls">
+        <button class="g-btn prev">←</button>
+        <button class="g-btn next">→</button>
+      </div>
+    </div>
+
+    <!-- RIGHT IMAGE FRAME -->
+<div class="gallery-frame">
+  <img id="galleryImage" src="./images/riviera/signature-pool.png" alt="">
+  <div class="frame-outline"></div>
+
+  <!-- MOBILE CONTROLS -->
+  <div class="mobile-controls">
+    <button class="g-btn prev">←</button>
+    <button class="g-btn next">→</button>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<section id="location" class="section soft reveal">
+  <div class="container grid-2 location-grid">
+
+    <!-- MAP -->
+    <div class="image-card location-map">
+      <img
+        src="./images/riviera/location-map.webp"
+        alt="AIPL Riviera Location Map – Sector 103 Dwarka Expressway"
+      >
+    </div>
+
+    <!-- CONTENT -->
+    <div class="location-content">
+      <h2>Sector 103, Dwarka Expressway</h2>
+
+      <p class="location-intro">
+        A location chosen for long-term growth -
+        connected yet protected from congestion.
+      </p>
+
+     <ul class="lux-list lux-list-icons location-list">
+
+  <li>
+    <span class="lux-icon">
+      <!-- Expressway -->
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M3 17h18M5 7l2 10M19 7l-2 10"
+          stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </span>
+    <span>Dwarka Expressway · 5 mins</span>
+  </li>
+
+  <li>
+    <span class="lux-icon">
+      <!-- Airport -->
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M2 16l20-4-20-4 6 4-6 4z"
+          stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <span>IGI Airport · 20 mins</span>
+  </li>
+
+  <li>
+    <span class="lux-icon">
+      <!-- Metro -->
+      <svg viewBox="0 0 24 24" fill="none">
+        <rect x="4" y="3" width="16" height="14" rx="2"
+          stroke="currentColor" stroke-width="1.5"/>
+        <path d="M8 17l-2 4M16 17l2 4"
+          stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+    </span>
+    <span>Proposed Metro · 5 mins</span>
+  </li>
+
+  <li>
+    <span class="lux-icon">
+      <!-- School -->
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M3 9l9-4 9 4-9 4-9-4z"
+          stroke="currentColor" stroke-width="1.5"/>
+        <path d="M6 11v4M18 11v4"
+          stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+    </span>
+    <span>Reputed Schools Nearby</span>
+  </li>
+
+  <li>
+    <span class="lux-icon">
+      <!-- Hospital -->
+      <svg viewBox="0 0 24 24" fill="none">
+        <rect x="4" y="3" width="16" height="18" rx="2"
+          stroke="currentColor" stroke-width="1.5"/>
+        <path d="M12 7v10M7 12h10"
+          stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+    </span>
+    <span>Multi-Speciality Hospitals Nearby</span>
+  </li>
+
+</ul>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section center reveal">
+  <h2>Built on AIPL’s Legacy</h2>
+  <p>
+    Since 1991, AIPL has created landmark residential
+    and commercial destinations across India.
+  </p>
+
+  <div class="legacy-stats">
+    <div><strong>30+</strong><span>Years</span></div>
+    <div><strong>50+</strong><span>Projects</span></div>
+    <div><strong>10,500+</strong><span>Customers</span></div>
+  </div>
+</section>
+
+
+<section class="section soft reveal" id="partner-advantage">
+  <div class="container grid-2">
+
+    <!-- LEFT: CONTENT -->
+    <div>
+      <span class="eyebrow">Authorized Channel Partner</span>
+      <h2>Channel Partner Advantage</h2>
+
+      <p class="location-intro">
+        Select benefits extended to buyers engaging through
+        authorized channel partners. Designed to enhance
+        access, guidance, and purchase experience - without
+        altering the value of the residence itself.
+      </p>
+
+      <ul class="lux-list lux-list-icons">
+
+        <li>
+          <span class="lux-icon">✓</span>
+          <span>
+            <strong>Assured iPhone*</strong><br>
+            A limited partner-led appreciation benefit,
+            subject to availability and applicable terms.
+          </span>
+        </li>
+
+        <li>
+          <span class="lux-icon">✓</span>
+          <span>
+            <strong>Priority Inventory Access</strong><br>
+            Early visibility into select units before
+            wider public release.
+          </span>
+        </li>
+
+        <li>
+          <span class="lux-icon">✓</span>
+          <span>
+            <strong>Best Commercial Guidance</strong><br>
+            Advisory support focused on layout efficiency,
+            view orientation, and long-term value.
+          </span>
+        </li>
+
+      </ul>
+
+      <p style="font-size:13px;color:var(--text-muted);margin-top:24px">
+        *Partner benefits are subject to availability and
+        developer-approved terms.
+      </p>
+    </div>
+
+    <!-- RIGHT: VISUAL (OPTIONAL) -->
+    <div class="image-card">
+      <img src="./images/partner-advantage.png" alt="Channel Partner Advantage">
+    </div>
+
+  </div>
+</section>
+<section id="enquire" class="section reveal">
+  <div class="container center">
+    <h2>Limited Residences. Thoughtfully Released.</h2>
+    <p>
+      Schedule a private viewing. Our relationship manager will assist you personally.
+    </p>
+
+    <div class="form-wrap">
+      <input placeholder="Your Name" required>
+      <input placeholder="Mobile Number" required>
+      <input placeholder="Email (optional)">
+      <button>Request Brochure</button>
+      <small style="color:var(--text-muted)">
+        *Offers subject to availability
+      </small>
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+  <img src="images/footer-riveera-logo.svg" alt="AIPL Riviera Logo" class="footer-logo">
+
+  <p>
+    AIPL Riviera<br>
+    <span>
+      © 2026 Advance India Projects Ltd. · Marketed by RealBetter
+    </span>
+  </p>
+</footer>
+
+
+<script>
+window.addEventListener("scroll",()=>{
+  document.documentElement.style.setProperty(
+    "--hero-shift",
+    window.scrollY * 0.15 + "px"
+  );
+});
+
+const reveals=document.querySelectorAll(".reveal");
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add("visible");}
+  });
+},{threshold:0.15});
+reveals.forEach(r=>io.observe(r));
+</script>
+<script>
+const header = document.querySelector(".rb-header");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 80) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+</script>
+<script>
+(() => {
+
+  const slides = [
+    {
+      title: "Signature Pool",
+      desc: "A calm, reflective pool designed as the visual heart of the community.",
+      img: "./images/riviera/pool.png"
+    },
+    {
+      title: "Wellness Zone",
+      desc: "Dedicated spaces that support balance, recovery, and holistic wellbeing.",
+      img: "./images/riviera/wellness-zone.png"
+    },
+    {
+      title: "Outdoor Fitness Zone",
+      desc: "Open-air fitness areas integrated into landscaped greens.",
+      img: "./images/riviera/outdoor-fitness.png"
+    },
+    {
+      title: "Walking Trails",
+      desc: "Meandering trails designed for slow walks and mindful movement.",
+      img: "./images/riviera/walking-trails.png"
+    },
+    {
+      title: "Multiple Themed Gardens",
+      desc: "Curated garden landscapes offering variety, calm, and visual depth.",
+      img: "./images/riviera/themed-gardens.png"
+    },
+    {
+      title: "Pet Garden",
+      desc: "A thoughtfully designed outdoor space where pets can play freely.",
+      img: "./images/riviera/pet-garden.png"
+    },
+    {
+      title: "Relaxation Spaces",
+      desc: "Quiet seating pockets beside water and greenery for everyday unwinding.",
+      img: "./images/riviera/relaxation-spaces.png"
+    },
+    {
+      title: "Biophilic Lounge",
+      desc: "Nature-integrated lounges that blur indoor and outdoor living.",
+      img: "./images/riviera/biophilic-lounge.png"
+    },
+    {
+      title: "Meditation Zones",
+      desc: "Serene zones created for silence, focus, and inner balance.",
+      img: "./images/riviera/meditation-zones.png"
+    },
+    {
+      title: "Kids Play Areas",
+      desc: "Safe, contemporary play environments designed for joyful childhoods.",
+      img: "./images/riviera/kids-play.png"
+    },
+    {
+      title: "Social & Celebration Zones",
+      desc: "Shared spaces crafted for gatherings, celebrations, and community life.",
+      img: "./images/riviera/celebration-zones.png"
+    },
+    {
+      title: "Family Zones",
+      desc: "Open green areas designed for families to connect and spend time together.",
+      img: "./images/riviera/family-zones.png"
+    }
+  ];
+
+  let index = 0;
+  const AUTO_DELAY = 7000;
+
+  const titleEl = document.getElementById("galleryTitle");
+  const descEl  = document.getElementById("galleryDesc");
+  const imgEl   = document.getElementById("galleryImage");
+
+const prevBtns = document.querySelectorAll(".g-btn.prev");
+const nextBtns = document.querySelectorAll(".g-btn.next");
+
+  function render(){
+    titleEl.style.opacity = 0;
+    descEl.style.opacity = 0;
+    imgEl.style.opacity  = 0;
+
+    setTimeout(() => {
+      titleEl.textContent = slides[index].title;
+      descEl.textContent  = slides[index].desc;
+      imgEl.src           = slides[index].img;
+
+      titleEl.style.opacity = 1;
+      descEl.style.opacity  = 1;
+      imgEl.style.opacity   = 1;
+    }, 280);
+  }
+
+  function next(){
+    index = (index + 1) % slides.length;
+    render();
+  }
+
+  function prev(){
+    index = (index - 1 + slides.length) % slides.length;
+    render();
+  }
+
+prevBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    prev();
+    resetAuto();
+  });
+});
+
+nextBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    next();
+    resetAuto();
+  });
+});
+
+
+  let timer;
+  function startAuto(){
+    timer = setInterval(next, AUTO_DELAY);
+  }
+
+  function resetAuto(){
+    clearInterval(timer);
+    startAuto();
+  }
+
+  render();
+  startAuto();
+
+})();
+</script>
+
+<script>
+(() => {
+  const map = document.querySelector(".location-map");
+
+  if(!map) return;
+
+  map.addEventListener("click", () => {
+    map.classList.toggle("zoomed");
+  });
+})();
+</script>
+
+
+<a
+  href="https://wa.me/919355668833"
+  class="whatsapp-float"
+  target="_blank"
+  aria-label="Chat on WhatsApp"
+>
+  <span class="wa-tooltip">Quick chat?</span>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="26"
+  height="26"
+  viewBox="-3 -3 38 38"
+  aria-hidden="true"
+>
+  <!-- Base white outline (even on all sides) -->
+  <path
+    d="M16 0C7.163 0 0 7.163 0 16c0 2.82.737 5.57 2.133 7.997L0 32l8.27-2.17A15.94 15.94 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0z"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="3"
+    vector-effect="non-scaling-stroke"
+  />
+
+  <!-- Extra right-biased outline -->
+  <path
+    d="M16 0C7.163 0 0 7.163 0 16c0 2.82.737 5.57 2.133 7.997L0 32l8.27-2.17A15.94 15.94 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0z"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="2"
+    transform="translate(0.6 0)"
+    vector-effect="non-scaling-stroke"
+  />
+
+  <!-- Main green shape -->
+  <path
+    d="M16 0C7.163 0 0 7.163 0 16c0 2.82.737 5.57 2.133 7.997L0 32l8.27-2.17A15.94 15.94 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0z"
+    fill="#25D366"
+  />
+
+  <!-- Phone glyph -->
+  <path
+    d="M24.326 19.484c-.363-.182-2.152-1.063-2.486-1.183-.333-.121-.576-.182-.818.181-.242.363-.939 1.183-1.151 1.425-.212.242-.424.273-.788.091-.363-.181-1.535-.566-2.922-1.805-1.08-.964-1.809-2.154-2.021-2.517-.212-.363-.023-.559.159-.741.164-.163.364-.424.546-.636.182-.212.242-.363.364-.605.121-.242.061-.454-.03-.636-.091-.181-.818-1.97-1.121-2.698-.295-.708-.596-.612-.818-.623l-.697-.012c-.242 0-.636.091-.969.454-.333.363-1.273 1.243-1.273 3.03 0 1.788 1.303 3.515 1.485 3.757.182.242 2.566 3.92 6.218 5.497.869.374 1.547.597 2.075.763.872.277 1.665.238 2.292.145.699-.104 2.152-.879 2.455-1.727.303-.848.303-1.576.212-1.727-.091-.151-.333-.242-.697-.424z"
+    fill="#FFFFFF"
+  />
+</svg>
+
+
+</a>
+<script>
+(() => {
+  const waButton = document.querySelector(".whatsapp-float");
+  if (!waButton) return;
+
+  setInterval(() => {
+    waButton.classList.add("show-tooltip", "pulse");
+
+    setTimeout(() => {
+      waButton.classList.remove("show-tooltip", "pulse");
+    }, 2500);
+  }, 4000);
+})();
+</script>
+
+<script>
+(function () {
+  const card = document.querySelector('.image-card');
+  const scrollBox = card.querySelector('.zoom-scroll');
+
+  card.addEventListener('click', () => {
+    card.classList.toggle('is-zoomed');
+
+    if (!card.classList.contains('is-zoomed')) {
+      scrollBox.scrollLeft = 0;
+      scrollBox.scrollTop = 0;
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

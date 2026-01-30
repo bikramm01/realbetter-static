@@ -1,0 +1,174 @@
+/* ===============================
+   REALBETTER BASE DESIGN SYSTEM
+================================ */
+
+/* -------- RESET -------- */
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height:1.6;
+  background:#ffffff;
+  color:#0f172a;
+}
+
+/* -------- VARIABLES -------- */
+:root{
+  --rb-dark:#0f172a;
+  --rb-muted:#64748b;
+  --rb-light:#f8fafc;
+  --rb-border:#e5e7eb;
+  --rb-accent:#e11d48;
+}
+
+/* -------- TYPOGRAPHY -------- */
+h1,h2,h3,h4,h5{
+  font-weight:600;
+  line-height:1.2;
+}
+
+h1{font-size:clamp(36px,5vw,60px)}
+h2{font-size:clamp(28px,4vw,42px)}
+h3{font-size:20px}
+
+p{
+  color:var(--rb-muted);
+  font-size:16px;
+}
+
+small{
+  font-size:12px;
+  color:var(--rb-muted);
+}
+
+/* -------- LINKS & BUTTONS -------- */
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px 32px;
+  border-radius:999px;
+  background:var(--rb-accent);
+  color:#fff;
+  font-weight:600;
+  transition:.25s ease;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  background:#be123c;
+}
+
+/* -------- LAYOUT -------- */
+.container{
+  max-width:1180px;
+  margin:auto;
+  padding:0 20px;
+}
+
+.section{
+  padding:90px 0;
+}
+
+.center{
+  text-align:center;
+}
+
+.grid-2{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:32px;
+}
+
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:26px;
+}
+
+/* -------- CARDS -------- */
+.card{
+  background:#fff;
+  border-radius:20px;
+  padding:28px;
+  box-shadow:0 18px 45px rgba(0,0,0,.08);
+}
+
+/* -------- FORMS -------- */
+input,
+textarea{
+  width:100%;
+  padding:14px 16px;
+  border-radius:12px;
+  border:1px solid var(--rb-border);
+  font-size:15px;
+  font-family:inherit;
+}
+
+input:focus,
+textarea:focus{
+  outline:none;
+  border-color:var(--rb-accent);
+}
+
+button{
+  font-family:inherit;
+  cursor:pointer;
+}
+
+/* -------- FORM WRAPPER -------- */
+.form-box{
+  max-width:480px;
+  margin:auto;
+}
+
+/* -------- UTILS -------- */
+.muted{
+  color:var(--rb-muted);
+}
+
+.hide{
+  display:none;
+}
+
+/* -------- IMAGES -------- */
+img{
+  max-width:100%;
+  display:block;
+}
+
+/* -------- FOOTER -------- */
+footer{
+  padding:40px 20px;
+  font-size:13px;
+  color:var(--rb-muted);
+  text-align:center;
+}
+
+/* -------- MOBILE -------- */
+@media(max-width:768px){
+  .section{
+    padding:60px 0;
+  }
+
+  .btn{
+    width:100%;
+    padding:16px;
+  }
+}
