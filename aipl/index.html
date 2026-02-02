@@ -1650,31 +1650,156 @@ p{
 }
 
 /* =====================================================
-   FORM
+   FORM WRAP
 ===================================================== */
 .form-wrap{
-  max-width:440px;
-  margin:70px auto 0;
+  max-width: 440px;
+  margin: 70px auto 0;
+  animation: fadeUp .6s ease;
 }
+
+/* =====================================================
+   INPUTS + BUTTON BASE
+===================================================== */
 .form-wrap input,
 .form-wrap button{
-  width:100%;
-  padding:16px;
-  margin-bottom:16px;
-  border-radius:14px;
-  border:none;
-  font-size:15px;
+  width: 100%;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+  border-radius: 14px;
+  border: none;
+  font-size: 15px;
+  outline: none;
+  transition: all .25s ease;
 }
+
+/* =====================================================
+   INPUT FIELDS
+===================================================== */
 .form-wrap input{
-  background:var(--surface);
-  color:#fff;
+  background: var(--surface);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.08);
 }
+
+/* Placeholder */
+.form-wrap input::placeholder{
+  color: rgba(255,255,255,.55);
+}
+
+/* Hover */
+.form-wrap input:hover{
+  border-color: rgba(255,255,255,.25);
+}
+
+/* Focus glow */
+.form-wrap input:focus{
+  border-color: var(--aipl-teal);
+  box-shadow: 0 0 0 3px rgba(34,137,154,.25);
+  transform: translateY(-1px);
+}
+
+/* Chrome autofill fix */
+input:-webkit-autofill{
+  -webkit-box-shadow: 0 0 0 1000px var(--surface) inset;
+  -webkit-text-fill-color: #fff;
+}
+
+/* =====================================================
+   BUTTON
+===================================================== */
 .form-wrap button{
-  background:var(--aipl-teal);
-  color:#fff;
-  font-weight:600;
-  border-radius:999px;
+  background: linear-gradient(
+    135deg,
+    #2aa7b8,
+    #1f8a9e
+  );
+  color: #fff;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: pointer;
+  letter-spacing: .3px;
+
+  box-shadow: 0 10px 22px rgba(34,137,154,.35);
+  transform: translateY(0);
 }
+
+/* Hover lift */
+.form-wrap button:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(34,137,154,.45);
+}
+
+/* Click press */
+.form-wrap button:active{
+  transform: translateY(1px) scale(.98);
+  box-shadow: 0 6px 14px rgba(34,137,154,.35);
+}
+
+/* Disabled / loading */
+.form-wrap button:disabled{
+  opacity: .65;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* =====================================================
+   MOBILE OPTIMIZATION
+===================================================== */
+@media (max-width: 480px){
+  .form-wrap{
+    margin-top: 40px;
+  }
+
+  .form-wrap input,
+  .form-wrap button{
+    padding: 15px;
+    font-size: 14px;
+  }
+}
+
+/* =====================================================
+   ENTRANCE ANIMATION
+===================================================== */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(15px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* =====================================================
+   SMOOTH FONT RENDERING (GLOBAL)
+===================================================== */
+body{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ==========================
+   AUTOFILL FIX (ADD ONLY)
+========================== */
+.form-wrap input:-webkit-autofill,
+.form-wrap input:-webkit-autofill:hover,
+.form-wrap input:-webkit-autofill:focus,
+.form-wrap input:-webkit-autofill:active{
+  -webkit-box-shadow: 0 0 0 1000px var(--surface) inset !important;
+  box-shadow: 0 0 0 1000px var(--surface) inset !important;
+
+  -webkit-text-fill-color: #fff !important;
+  caret-color: #fff !important;
+
+  border: 1px solid rgba(255,255,255,.08) !important;
+
+  transition: background-color 9999s ease-in-out 0s;
+}
+
 
 /* =====================================================
    FOOTER
@@ -1781,6 +1906,71 @@ p{
 }
 
 
+/* SUCCESS POPUP */
+
+.form-success{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  pointer-events:none;
+  transition:.35s;
+  z-index:99999;
+}
+
+.form-success.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.form-success-box{
+  background:#0E1416;
+  padding:40px;
+  border-radius:24px;
+  text-align:center;
+  max-width:360px;
+}
+
+/* Tick icon */
+
+.success-icon{
+  width:70px;
+  margin:16px auto;
+}
+
+.success-icon svg{
+  width:70px;
+  height:70px;
+  stroke:var(--aipl-teal);
+  stroke-width:3;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+/* Circle draw */
+.success-icon circle{
+  stroke-dasharray:157;
+  stroke-dashoffset:157;
+  animation:drawCircle .6s ease-out forwards;
+}
+
+/* Tick draw */
+.success-icon path{
+  stroke-dasharray:48;
+  stroke-dashoffset:48;
+  animation:drawTick .4s .6s ease-out forwards;
+}
+
+@keyframes drawCircle{
+  to{stroke-dashoffset:0;}
+}
+
+@keyframes drawTick{
+  to{stroke-dashoffset:0;}
+}
 
 
 </style>
@@ -2617,11 +2807,17 @@ nextBtns.forEach(btn => {
 <script>
 (() => {
   const form = document.getElementById("enquiryForm");
-
   if (!form) return;
+
+  const btn = form.querySelector("button");
+  const originalText = btn.innerText;
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+
+    // SHOW SUBMITTING STATE
+    btn.innerText = "Submitting...";
+    btn.disabled = true;
 
     const formData = new FormData(form);
 
@@ -2630,31 +2826,58 @@ nextBtns.forEach(btn => {
       phone: formData.get("phone"),
       email: formData.get("email"),
       project: "AIPL Riviera Sector 103",
-      source: "Website Landing Page"
+      source: "AIPL Website Landing Page"
     };
 
     try {
-      const res = await fetch("https://YOUR_API_ENDPOINT_HERE", {
+      const res = await fetch("https://www.abhrabanerjee.com/api/rb_aipl", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
       });
 
-      if (!res.ok) throw new Error("Submission failed");
+      if (!res.ok) throw new Error();
 
-      // Success UX
+      // SUCCESS
       form.reset();
-      alert("Thank you! Our team will contact you shortly.");
+      document.getElementById("formSuccess").classList.add("show");
+
+      setTimeout(()=>{
+        document.getElementById("formSuccess").classList.remove("show");
+
+        // RESET BUTTON
+        btn.innerText = originalText;
+        btn.disabled = false;
+      },4000);
 
     } catch (err) {
-      console.error(err);
       alert("Something went wrong. Please try again.");
+
+      btn.innerText = originalText;
+      btn.disabled = false;
     }
   });
 })();
 </script>
+
+<!-- SUCCESS POPUP -->
+<div id="formSuccess" class="form-success">
+  <div class="form-success-box">
+
+    <h3>Thank You</h3>
+
+    <!-- Tick SVG -->
+    <div class="success-icon">
+      <svg viewBox="0 0 52 52">
+        <circle cx="26" cy="26" r="25" fill="none"/>
+        <path fill="none" d="M14 27l7 7 16-16"/>
+      </svg>
+    </div>
+
+    <p>Our team will contact you shortly.</p>
+
+  </div>
+</div>
 
 </body>
 </html>
